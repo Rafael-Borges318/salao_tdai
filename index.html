@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manicure & Pedicure — Tramandaí</title>
+
+    <script>
+      const CONFIG = {
+        nome: "Rejane Souza",
+        whatsapp: "5551993369448",
+        cidade: "Tramandaí / Zona Nova Sul",
+        descricao:
+          "Manicure e pedicure com cuidado, capricho e higiene de verdade.",
+        horarios: "Seg a Sex · 9h às 18h",
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-container">
+        <div class="display site-logo">
+          <span id="header-nome"></span>
+        </div>
+        <a id="header-wpp" href="#" class="btn-primary header-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+            />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.131.557 4.13 1.533 5.864L.057 23.59a.5.5 0 0 0 .609.61l5.857-1.527A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.37l-.36-.213-3.723.977.992-3.628-.233-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"
+            />
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+
+      <div class="hero-container">
+        <div class="hero-grid" id="hero-grid">
+          <div>
+            <div class="pill fade-up">Tramandaí · RS</div>
+            <h1 class="display hero-title fade-up">
+              Mãos e pés <br /><em>bem cuidados,</em><br />com carinho.
+            </h1>
+            <p class="fade-up hero-desc" id="hero-desc"></p>
+
+            <div class="fade-up hero-actions">
+              <button class="btn-primary" onclick="scrollToServicos()">
+                Fazer pré-agendamento
+              </button>
+              <button class="btn-outline" onclick="scrollToAbout()">
+                Conheça o atendimento
+              </button>
+            </div>
+
+            <div class="fade-up hero-seals">
+              <div class="seal">
+                <div class="seal-dot"></div>
+                Materiais esterilizados
+              </div>
+              <div class="seal">
+                <div class="seal-dot"></div>
+                Higiene a cada atendimento
+              </div>
+              <div class="seal" id="hero-horarios">
+                <div class="seal-dot"></div>
+                <span id="seal-horarios"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual fade-up">
+            <div class="hero-circle-wrapper">
+              <div class="hero-circle-bg"></div>
+              <div class="pulse-ring"></div>
+
+              <div class="hero-circle-content">
+                <svg
+                  width="90"
+                  height="90"
+                  viewBox="0 0 90 90"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <ellipse
+                    cx="45"
+                    cy="48"
+                    rx="22"
+                    ry="28"
+                    fill="white"
+                    opacity="0.7"
+                  />
+                  <circle cx="45" cy="22" r="12" fill="white" opacity="0.5" />
+                  <circle cx="27" cy="32" r="8" fill="white" opacity="0.4" />
+                  <circle cx="63" cy="32" r="8" fill="white" opacity="0.4" />
+                  <path
+                    d="M38 50 Q45 62 52 50"
+                    stroke="#ffb5c8"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    fill="none"
+                  />
+                  <circle cx="45" cy="44" r="3" fill="#ffb5c8" />
+                </svg>
+                <p class="display hero-circle-name" id="hero-circle-nome"></p>
+              </div>
+
+              <div class="floating-tag floating-tag-top">✦ Capricho</div>
+              <div class="floating-tag floating-tag-bottom">✦ Confiança</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="about-section">
+      <div class="about-container">
+        <div class="divider-flower fade-up section-divider">
+          <span class="flower-icon">✿</span>
+        </div>
+        <span class="pill fade-up">A profissional</span>
+        <h2 class="display fade-up about-title" id="about-titulo"></h2>
+        <p class="fade-up about-text">
+          O meu trabalho é focado no
+          <strong class="about-strong">básico bem feito</strong>. Manicure e
+          pedicure tradicionais, realizados com cuidado, atenção e muito
+          capricho. Não trabalho com unhas de gel, fibra ou alongamento — porque
+          acredito que a excelência está em fazer o simples com perfeição.
+        </p>
+        <p class="fade-up about-text">
+          Cada cliente recebe atenção individual, materiais esterilizados e um
+          atendimento acolhedor. Aqui, você está em boas mãos.
+        </p>
+      </div>
+    </section>
+
+    <section id="servicos" class="services-section">
+      <div class="services-container">
+        <div class="services-header">
+          <span class="pill fade-up">Serviços</span>
+          <h2 class="display fade-up services-title">
+            Escolha seu atendimento
+          </h2>
+          <p class="fade-up services-subtitle">
+            Clique para fazer o pré-agendamento direto pelo WhatsApp com a
+            mensagem já pronta.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card fade-up" onclick="agendar('pe')">
+            <div class="service-icon">🦶</div>
+            <h3 class="display service-title">Pé</h3>
+            <p class="service-text">
+              Pedicure completa com hidratação, cutículas e esmaltação
+              cuidadosa.
+            </p>
+            <div class="btn-primary service-btn">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.131.557 4.13 1.533 5.864L.057 23.59a.5.5 0 0 0 .609.61l5.857-1.527A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.37l-.36-.213-3.723.977.992-3.628-.233-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"
+                />
+              </svg>
+              Agendar pelo WhatsApp
+            </div>
+          </div>
+
+          <div
+            class="service-card fade-up service-delay-1"
+            onclick="agendar('mao')"
+          >
+            <div class="service-icon">✋</div>
+            <h3 class="display service-title">Mão</h3>
+            <p class="service-text">
+              Manicure completa com tratamento de cutículas, lixamento e
+              esmaltação perfeita.
+            </p>
+            <div class="btn-primary service-btn">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.131.557 4.13 1.533 5.864L.057 23.59a.5.5 0 0 0 .609.61l5.857-1.527A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.37l-.36-.213-3.723.977.992-3.628-.233-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"
+                />
+              </svg>
+              Agendar pelo WhatsApp
+            </div>
+          </div>
+
+          <div
+            class="service-card fade-up service-card-featured service-delay-2"
+            onclick="agendar('pe_mao')"
+          >
+            <div class="service-badge">Mais pedido</div>
+            <div class="service-icon">🦶✋</div>
+            <h3 class="display service-title">Pé e Mão</h3>
+            <p class="service-text">
+              Manicure e pedicure completas no mesmo atendimento. A experiência
+              completa.
+            </p>
+            <div class="btn-primary service-btn">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+                />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.131.557 4.13 1.533 5.864L.057 23.59a.5.5 0 0 0 .609.61l5.857-1.527A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.37l-.36-.213-3.723.977.992-3.628-.233-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"
+                />
+              </svg>
+              Agendar pelo WhatsApp
+            </div>
+          </div>
+        </div>
+
+        <p class="fade-up services-note">
+          ✦ Não trabalho com gel, fibra ou alongamentos. Foco total no básico
+          bem feito.
+        </p>
+      </div>
+    </section>
+
+    <section class="hygiene-section">
+      <div class="hygiene-container">
+        <div class="hygiene-grid" id="hygiene-grid">
+          <div>
+            <span class="pill fade-up">Higiene & Cuidado</span>
+            <h2 class="display fade-up hygiene-title">
+              Sua segurança<br />vem em primeiro lugar.
+            </h2>
+            <p class="fade-up hygiene-text">
+              Cada detalhe do atendimento é pensado para garantir a máxima
+              higiene. Aqui você não precisa se preocupar — cuido de tudo com
+              rigor e transparência.
+            </p>
+            <button class="btn-primary fade-up" onclick="agendar('pe_mao')">
+              Reservar meu horário
+            </button>
+          </div>
+
+          <div class="hygiene-cards-grid">
+            <div class="hygiene-card fade-up">
+              <div class="hygiene-icon">🧼</div>
+              <h4 class="hygiene-card-title">Materiais esterilizados</h4>
+              <p class="hygiene-card-text">
+                Todos os instrumentos são esterilizados a cada cliente, sem
+                exceção.
+              </p>
+            </div>
+            <div class="hygiene-card fade-up service-delay-1">
+              <div class="hygiene-icon">🫙</div>
+              <h4 class="hygiene-card-title">Descartáveis</h4>
+              <p class="hygiene-card-text">
+                Lima, palito e outros materiais descartáveis são trocados a cada
+                atendimento.
+              </p>
+            </div>
+            <div class="hygiene-card fade-up service-delay-2">
+              <div class="hygiene-icon">✨</div>
+              <h4 class="hygiene-card-title">Limpeza do ambiente</h4>
+              <p class="hygiene-card-text">
+                O espaço é higienizado antes e depois de cada atendimento.
+              </p>
+            </div>
+            <div class="hygiene-card fade-up service-delay-3">
+              <div class="hygiene-icon">🌸</div>
+              <h4 class="hygiene-card-title">Ambiente acolhedor</h4>
+              <p class="hygiene-card-text">
+                Um espaço pensado para você se sentir bem, segura e confortável.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-section">
+      <div class="trust-container">
+        <div class="trust-grid">
+          <div class="fade-up">
+            <div class="display trust-star">✦</div>
+            <p class="trust-title">Atendimento com capricho</p>
+            <p class="trust-text">Cada detalhe recebe atenção especial</p>
+          </div>
+          <div class="fade-up service-delay-1">
+            <div class="display trust-star">✦</div>
+            <p class="trust-title">Serviço de confiança</p>
+            <p class="trust-text">Clientes satisfeitas que voltam sempre</p>
+          </div>
+          <div class="fade-up service-delay-2">
+            <div class="display trust-star">✦</div>
+            <p class="trust-title">Básico bem feito</p>
+            <p class="trust-text">Excelência no que realmente importa</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section">
+      <div class="benefits-container">
+        <div class="benefits-header">
+          <span class="pill fade-up">Por que escolher</span>
+          <h2 class="display fade-up benefits-title">
+            O que torna este<br />atendimento diferente
+          </h2>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-item fade-up">
+            <div class="benefit-icon">🎯</div>
+            <div>
+              <h4 class="benefit-title">Foco no essencial</h4>
+              <p class="benefit-text">
+                Sem serviços que não domino. Só manicure e pedicure — feitos com
+                muita dedicação.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item fade-up service-delay-1">
+            <div class="benefit-icon">🤝</div>
+            <div>
+              <h4 class="benefit-title">Atendimento personalizado</h4>
+              <p class="benefit-text">
+                Cada cliente recebe atenção exclusiva durante todo o
+                atendimento.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item fade-up service-delay-2">
+            <div class="benefit-icon">🔬</div>
+            <div>
+              <h4 class="benefit-title">Rigor com higiene</h4>
+              <p class="benefit-text">
+                Esterilização e descartáveis em todos os atendimentos. Sem
+                flexibilizar.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item fade-up service-delay-3">
+            <div class="benefit-icon">💬</div>
+            <div>
+              <h4 class="benefit-title">Ambiente tranquilo</h4>
+              <p class="benefit-text">
+                Um espaço para você relaxar e se cuidar com calma e conforto.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item fade-up benefit-delay-4">
+            <div class="benefit-icon">📍</div>
+            <div>
+              <h4 class="benefit-title">Localização conveniente</h4>
+              <p class="benefit-text">
+                Atendimento em
+                <span id="dif-cidade" class="benefit-location"></span>, perto de
+                você.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-item fade-up benefit-delay-5">
+            <div class="benefit-icon">📱</div>
+            <div>
+              <h4 class="benefit-title">Agendamento fácil</h4>
+              <p class="benefit-text">
+                Pré-agendamento rápido pelo WhatsApp. Sem complicação.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location-section">
+      <div class="location-container">
+        <span class="pill fade-up">Onde nos encontrar</span>
+        <h2 class="display fade-up location-title">
+          Atendimento em<br /><span
+            id="loc-cidade"
+            class="location-highlight"
+          ></span>
+        </h2>
+        <p class="fade-up location-text">
+          Faça seu pré-agendamento pelo WhatsApp e confirme o endereço exato
+          pelo chat. Atendimento com hora marcada para garantir a sua
+          privacidade e conforto.
+        </p>
+
+        <div class="fade-up location-seals">
+          <div class="seal"><span>📍</span> <span id="loc-cidade2"></span></div>
+          <div class="seal">
+            <span>🕐</span> <span id="loc-horarios"></span>
+          </div>
+        </div>
+
+        <button class="btn-primary fade-up" onclick="agendar('pe_mao')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+            />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.131.557 4.13 1.533 5.864L.057 23.59a.5.5 0 0 0 .609.61l5.857-1.527A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.37l-.36-.213-3.723.977.992-3.628-.233-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"
+            />
+          </svg>
+          Falar agora no WhatsApp
+        </button>
+      </div>
+    </section>
+
+    <section class="final-cta-section">
+      <div class="final-cta-container">
+        <div class="divider-flower fade-up section-divider">
+          <span class="flower-icon flower-big">✿</span>
+        </div>
+        <h2 class="display fade-up final-cta-title">
+          Cuide-se com quem<br /><em>realmente se importa.</em>
+        </h2>
+        <p class="fade-up final-cta-text">
+          Reserve seu horário agora e descubra o prazer de um atendimento feito
+          com capricho, higiene e cuidado de verdade.
+        </p>
+        <div class="fade-up final-cta-actions">
+          <button class="btn-primary final-cta-btn" onclick="agendar('pe_mao')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+              />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.131.557 4.13 1.533 5.864L.057 23.59a.5.5 0 0 0 .609.61l5.857-1.527A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.37l-.36-.213-3.723.977.992-3.628-.233-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"
+              />
+            </svg>
+            Fazer pré-agendamento
+          </button>
+          <button class="btn-outline" onclick="scrollToServicos()">
+            Ver serviços
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div>
+          <p class="display footer-name" id="footer-nome"></p>
+          <p class="footer-subtitle">
+            Manicure & Pedicure · <span id="footer-cidade"></span>
+          </p>
+        </div>
+        <div class="footer-right">
+          <p class="footer-hours" id="footer-horarios"></p>
+          <a id="footer-wpp" href="#" class="footer-link">📲 WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © <span id="ano"></span> <span id="footer-nome2"></span> · Todos os
+          direitos reservados
+        </p>
+      </div>
+    </footer>
+
+    <div id="wpp-float">
+      <a id="wpp-float-link" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+          />
+          <path
+            d="M12 0C5.373 0 0 5.373 0 12c0 2.131.557 4.13 1.533 5.864L.057 23.59a.5.5 0 0 0 .609.61l5.857-1.527A11.948 11.948 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.007-1.37l-.36-.213-3.723.977.992-3.628-.233-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.573 6.573 2.182 12 2.182S21.818 6.573 21.818 12 17.427 21.818 12 21.818z"
+          />
+        </svg>
+        Falar agora
+      </a>
+    </div>
+
+    <button
+      id="back-top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      aria-label="Voltar ao topo"
+    >
+      <svg
+        width="18"
+        height="18"
+        fill="none"
+        stroke="white"
+        stroke-width="2.5"
+        viewBox="0 0 24 24"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
